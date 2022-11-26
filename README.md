@@ -1,4 +1,4 @@
-![Groupomania ](.groupomania_projet_7)
+![Groupomania ](.readme/groupomania_projet_7.PNG)
 
 # Projet 7 Groupomania Front End
 
