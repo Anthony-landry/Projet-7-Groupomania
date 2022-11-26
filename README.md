@@ -2,6 +2,12 @@
 
 # Projet 7 Groupomania Front End
 
+
+- Projet fait avec : 
+                                                                                                                                 
+Angular : <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular logo" title="projet 7 avec Angular" height="60"/> 
+Angular Maeterial : <img src="https://angular.io/generated/images/marketing/concept-icons/material.png" alt="Angular material logo" title="projet 7 avec Angular material" height="50"/>
+
 Installez les dépendances
 ```terminal
 npm install
@@ -17,6 +23,17 @@ Ouvrir avec cette adresse
 
 
 # Projet 7 Groupomania Back End
+
+projet fait avec : 
+
+NodeJS : <img src="https://www.soat.fr/assets/images/formation/NodeJS.png" alt="NodeJS logo" title="projet 7 avec NodeJS" height="60"/> 
+TypeORM : <img src="https://avatars.githubusercontent.com/u/20165699?s=200&v=4" alt="TypeORM logo" title="projet 7 avec TypeORM" height="60"/> 
+PostegreSQL : <img src="https://www.impulsmap.fr/wp-content/uploads/2016/07/LogoPostgreSql100reel.png" alt="PostegreSQL logo" title="projet 7 avec PostegreSQL" height="60"/> 
+
+
+
+
+
 
 Installez les dépendances
 ```terminal
