@@ -1,0 +1,18 @@
+<div style="height: 100%">
+  <app-header></app-header>
+  <div *ngIf="posts.length > 0" class="posts-container">
+    <div *ngFor="let post of posts" class="posts">
+      <app-post
+        [idUserConnected]="idUserConnected"
+        [isAdmin]="isAdmin"
+        [post]="post"
+        class="single-post"
+      >
+      </app-post>
+    </div>
+    <div *ngIf="!posts?.length" class="posts">
+      <h3>Pas de publication</h3>
+    </div>
+    <div class="footer">@Groupomania</div>
+  </div>
+</div>

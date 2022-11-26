@@ -1,0 +1,11 @@
+.passwordItem {
+  margin: 5px 0px;
+}
+
+.login {
+  font-size: 20px;
+}
+
+.login:focus {
+  outline: 1px solid #4e5166;
+}

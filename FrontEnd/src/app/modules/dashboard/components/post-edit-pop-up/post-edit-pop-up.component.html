@@ -1,0 +1,50 @@
+<div class="form-container" style="display: contents">
+  <form class="p-20" [formGroup]="formGroup">
+    <label class="f-l" for="title">Titre</label>
+    <input
+      id="title"
+      [class]="
+        formGroup.touched && formGroup.get('title')?.hasError('required')
+          ? 'error'
+          : ''
+      "
+      formControlName="title"
+    />
+
+    <label class="f-l" for="url">Lien du l'url</label>
+    <input
+    (change)="onImagePicked($event)"
+    accept=".png, .jpg, .jpeg"
+      type="file"
+      [class]="
+        formGroup.touched && formGroup.get('url')?.hasError('required')
+          ? 'error'
+          : ''
+      "
+
+      formControlName="url"
+      id="url"
+    />
+
+    <button
+      aria-label="modifier"
+      *ngIf="post?.id"
+      class="login"
+      style="height: unset; margin-top: 20px"
+      (click)="update()"
+      mat-button
+    >
+      Modifier
+    </button>
+    <button
+      aria-label="créer"
+      *ngIf="!post?.id"
+      class="login"
+      (click)="createPost()"
+      style="height: unset; margin-top: 20px"
+      mat-button
+    >
+      Créer
+    </button>
+  </form>
+</div>

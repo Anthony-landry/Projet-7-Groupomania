@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
+.app {
+  display: grid;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  margin: unset;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  height: 100%;
+  font-family: "Lato", sans-serif !important;
+  color: #4e5166;
+}
+
+.f-r {
+  float: right;
+}
+
+.f-l {
+  float: left;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.mat-button {
+  font-family: "lato", sans-serif;
+  font-size: 0.875rem;
+  background: white;
+  color: #fd2d01;
+  font-weight: 700;
+  width: 48%;
+  height: 50px;
+  min-width: 10rem;
+}
+
+.mat-menu-item {
+  font-family: "lato", sans-serif;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem 0.75rem;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-container {
+  max-width: 36rem;
+  background: white;
+  margin-top: 20px;
+  border-radius: 4px;
+  display: block;
+}
+
+.login {
+  width: 100%;
+  background: #fd2d01;
+  color: white;
+  margin-top: 30px;
+}
+
+.error {
+  border-color: red;
+}
+
+.mat-dialog-container {
+  padding: inherit !important;
+  margin-bottom: 200px;
+}
+
+.green {
+  background-color: rgb(54, 255, 47);
+  color: white;
+}
+
+.red {
+  background-color: rgb(252, 88, 88);
+  color: white;
+}
+
+.footer {
+  margin-top: auto;
+  background: #ffd7d7;
+  text-align: center;
+  font-weight: 550;
+}

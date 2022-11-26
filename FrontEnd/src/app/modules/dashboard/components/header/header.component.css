@@ -1,0 +1,72 @@
+.image {
+  width: 30%;
+  min-width: 150px;
+  object-fit: fill;
+}
+
+.new-post {
+  width: 120px;
+  min-width: 120px;
+  background: #fd2d01;
+  color: white;
+  height: unset;
+  margin-left: 10px;
+}
+
+.new-post:focus {
+  outline: 1px solid #4e5166;
+}
+
+.log-out {
+  width: 120px;
+  min-width: 120px;
+  background: white;
+  color: #fd2d01;
+  border-style: solid;
+  border-width: thin;
+  height: unset;
+  margin-left: 10px;
+}
+
+.log-out:focus {
+  outline: 1px solid #4e5166;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mat-toolbar {
+  background-color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .button-text {
+    display: none;
+  }
+  .new-post,
+  .log-out {
+    min-width: 40px;
+    width: 40px;
+  }
+}
+
+.mat-button {
+  padding: unset;
+}
+
+.material-icons {
+  font-size: 20px;
+}
+
+.mat-icon {
+  height: unset;
+  width: unset;
+}

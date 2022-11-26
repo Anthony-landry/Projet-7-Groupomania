@@ -1,0 +1,34 @@
+<div class="form-container">
+  <form class="p-20" [formGroup]="formGroup">
+    <label class="f-l" for="email">Adresse e-mail*</label>
+    <input
+      id="email"
+      [class]="
+        formGroup.touched && !formGroup.get('email')?.valid ? 'error' : ''
+      "
+      formControlName="email"
+      placeholder="anthony@mail.com"
+    />
+
+    <label class="f-l" for="password">Mot de passe*</label>
+    <input
+      type="password"
+      [class]="
+        formGroup.touched && formGroup.get('password')?.hasError('required')
+          ? 'error'
+          : ''
+      "
+      formControlName="password"
+      id="password"
+    />
+
+    <button
+      aria-label="se connecter"
+      class="login"
+      (click)="signIn()"
+      mat-button
+    >
+      Se connecter
+    </button>
+  </form>
+</div>

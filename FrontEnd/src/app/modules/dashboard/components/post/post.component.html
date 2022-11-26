@@ -1,0 +1,64 @@
+<div class="post-container">
+  <div class="post-header">
+    <div class="info-container">
+      <div>
+        <img alt="avatar" class="avatar" src="../../../assets/avatr.jpg" />
+      </div>
+      <div class="align-vertical">
+        <span
+          ><b>{{ post?.user?.pseudo }}</b></span
+        >
+
+        <span class="date"> {{ post.creationDate | date: "short" }}</span>
+      </div>
+    </div>
+    <div class="like-container">
+      <span class="mr-10">{{ post.nbOfLike }}</span>
+      <mat-icon
+        style="cursor: pointer"
+        class="material-icons-outlined"
+        *ngIf="!post?.isLikedByMe"
+        (click)="likeHandler(post.id)"
+      >
+        thumb_up
+      </mat-icon>
+
+      <mat-icon
+        style="cursor: pointer"
+        (click)="likeHandler(post.id)"
+        *ngIf="post?.isLikedByMe"
+      >
+        thumb_up
+      </mat-icon>
+      <button
+        *ngIf="isAdmin || idUserConnected === post.userId"
+        aria-label="menu éditer ou supprimer"
+        [matMenuTriggerFor]="menu"
+        mat-icon-button
+      >
+        <mat-icon class="menu">more_vert</mat-icon>
+      </button>
+    </div>
+
+    <mat-menu #menu>
+      <button aria-label="éditer" mat-menu-item (click)="update()">
+        <span class="material-icons-outlined">edit</span>
+        Modifier
+      </button>
+      <button aria-label="supprimer" mat-menu-item (click)="delete()">
+        <span class="material-icons-outlined">delete</span>
+        Supprimer
+      </button>
+    </mat-menu>
+  </div>
+  <div>
+    {{ post.title }}
+  </div>
+  <div class="image-container">
+    <img
+      class="post-image"
+      alt="image du post"
+      [src]="'http://localhost:3000/'+post.picture"
+    />
+  </div> 
+</div>

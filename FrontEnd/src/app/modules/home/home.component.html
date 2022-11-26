@@ -1,0 +1,35 @@
+<div class="page-container">
+  <div class="container">
+    <div class="logo width">
+      <img
+        class="image"
+        src="../../../assets/icon-left-font-monochrome-white.png"
+        alt="image de la société groupomania"
+      />
+    </div>
+    <div class="button-container width">
+      <button
+        aria-label="se connecter"
+        [ngClass]="login ? '' : 'selected-button'"
+        mat-button
+        (click)="login = !login"
+        routerLink="sign-in"
+      >
+        Se connecter
+      </button>
+      <button
+        aria-label="crée un compte"
+        [ngClass]="login ? 'selected-button' : ''"
+        class="f-r"
+        (click)="login = !login"
+        mat-button
+        routerLink="sign-up"
+      >
+        Créer un compte
+      </button>
+    </div>
+    <div style="width: 50%; max-width: 36rem; min-width: 300px">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <div class="header">
+    <div style="display: flex">
+      <img
+        class="image"
+        src="../../../assets/icon-left-font-monochrome-black2.png"
+        alt="image de groupomania"
+      />
+    </div>
+    <span class="spacer"></span>
+    <button
+      aria-label="publication"
+      class="new-post"
+      mat-button
+      (click)="create()"
+    >
+      <mat-icon>add</mat-icon>
+      <span class="button-text">publication</span>
+    </button>
+    <button
+      aria-label="se déconnecter"
+      class="log-out"
+      mat-button
+      (click)="logout()"
+    >
+      <mat-icon aria-hidden="false">login</mat-icon>
+      <span class="button-text"> deconnexion</span>
+    </button>
+  </div>
+</mat-toolbar>

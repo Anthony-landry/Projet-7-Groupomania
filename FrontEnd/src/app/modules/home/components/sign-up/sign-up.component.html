@@ -1,0 +1,95 @@
+<div class="form-container">
+  <form class="p-20" [formGroup]="formGroup" autocomplete="off">
+    <label class="f-l" for="pseudo">Pseudonyme*</label>
+    <input
+      id="pseudo"
+      [class]="
+        formGroup.touched && formGroup.get('pseudo')?.hasError('required')
+          ? 'error'
+          : ''
+      "
+      formControlName="pseudo"
+      required
+    />
+
+    <label class="f-l" for="email">Adresse e-mail*</label>
+    <input
+      id="email"
+      formControlName="email"
+      [class]="
+        formGroup.touched && !formGroup.get('email')?.valid ? 'error' : ''
+      "
+      placeholder="anthony@mail.com"
+    />
+
+    <label class="f-l" for="password">Mot de passe*</label>
+    <input
+      autocomplete="new-password"
+      id="password"
+      type="password"
+      [class]="
+        formGroup.touched && !formGroup.get('password')?.valid ? 'error' : ''
+      "
+      formControlName="password"
+    />
+    <div
+      *ngIf="
+        formGroup.touched &&
+        formGroup.get('password')?.value &&
+        !formGroup.get('password')?.valid
+      "
+    >
+      <div class="passwordItem">
+        <app-password-item
+          [label]="'doit contenir entre 8 et 20 caractéres'"
+          [valid]="
+            !formGroup.get('password')?.hasError('minlength') &&
+            !formGroup.get('password')?.hasError('maxlength')
+          "
+        >
+        </app-password-item>
+      </div>
+      <div class="passwordItem">
+        <app-password-item
+          [label]="'doit contenir au moins un chiffre'"
+          [valid]="!formGroup.get('password')?.hasError('digit')"
+        >
+        </app-password-item>
+      </div>
+      <div class="passwordItem">
+        <app-password-item
+          [label]="
+            'doit contenir au moins une lettre majuscule et une lettre miniscule'
+          "
+          [valid]="
+            !formGroup.get('password')?.hasError('lower') &&
+            !formGroup.get('password')?.hasError('upper')
+          "
+        >
+        </app-password-item>
+      </div>
+      <div class="passwordItem">
+        <app-password-item
+          [label]="'Ne doit pas contenir d espace'"
+          [valid]="!formGroup.get('password')?.hasError('whitespace')"
+        ></app-password-item>
+      </div>
+      <div class="passwordItem">
+        <app-password-item
+          [label]="'Ne doit pas être dans la blacklist'"
+          [valid]="!formGroup.get('password')?.hasError('blacklist')"
+        >
+        </app-password-item>
+      </div>
+    </div>
+
+    <button
+      aria-label="Créer mon compte"
+      class="login"
+      (click)="signUp()"
+      mat-button
+    >
+      Créer mon compte
+    </button>
+  </form>
+</div>
