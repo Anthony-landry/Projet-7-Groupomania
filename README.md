@@ -24,7 +24,7 @@ Ouvrir avec cette adresse
 
 # Projet 7 Groupomania Back End
 
-projet fait avec : 
+- Projet fait avec : 
 
 NodeJS : <img src="https://www.soat.fr/assets/images/formation/NodeJS.png" alt="NodeJS logo" title="projet 7 avec NodeJS" height="60"/> 
 TypeORM : <img src="https://avatars.githubusercontent.com/u/20165699?s=200&v=4" alt="TypeORM logo" title="projet 7 avec TypeORM" height="60"/> 
