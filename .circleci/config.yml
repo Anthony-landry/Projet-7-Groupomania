@@ -1,0 +1,64 @@
+version: 2.1
+orbs:
+  heroku: circleci/heroku@1.0.1
+jobs:
+  build-and-test:
+    docker:
+      - image: python:3.8-slim-buster
+    steps:
+      - checkout
+      - run:
+          name: LS LA
+          command: ls -la
+          when: always
+      - run:
+          name: Virtual environment
+          command: bash build-env.sh
+          when: always
+      - run:
+          name: Python linting
+          command: source venv/bin/activate && flake8
+          when: always
+      - run:
+          name: Unit tests
+          command: source venv/bin/activate && pytest
+          when: always
+  containerise:
+    machine: true
+    steps:
+     - checkout
+     - run:
+          name: Authenticate to registry
+          command: echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USER --password-stdin
+          when: always
+     - run:
+          name: Build image
+          command: docker build --tag guillaume52b/guillaumementors:${CIRCLE_SHA1} .
+          when: always
+     - run:
+          name: Push image
+          command: docker push guillaume52b/guillaumementors:${CIRCLE_SHA1}
+          when: always
+  deploy-production:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/deploy-via-git
+workflows:
+  build-test-deploy:
+    jobs:
+      - build-and-test
+      - containerise:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only:
+                - master
+      - deploy-production:
+          requires:
+            - containerise
+          filters:
+            branches:
+              only:
+                - master
